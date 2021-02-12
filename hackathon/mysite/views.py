@@ -1,22 +1,36 @@
 from django.shortcuts import render, redirect
-from .models import Profile
+from .models import Profile, Pin
 from django.views.generic import TemplateView
 from django.contrib.auth.decorators import login_required
-from .forms import createProfile, createUser
+from .forms import createProfile, createUser, submitResource
 from django.contrib.auth.models import User
 
 # Create your views here.
 class HomePageView(TemplateView):
     template_name = 'home.html'
 
-@login_required (redirect_field_name='/')
+@login_required 
 def profile_view(request):
     profs = Profile.objects.get(user = request.user)
     print(profs)
+    pins = Pin.objects.all()
+    userPins = pins.filter(prof = profs)
+    Rform = submitResource()
+    if request.method=='POST':
+        print("POSTTTTT")
+        Rform = submitResource(request.POST, request.FILES, )
+        if Rform.is_valid():
+            print("VALIDDD")
+            Rform.save()
+        
     context = {
+        'Rform': Rform,
+        'pins': userPins,
         'profile': profs
     }
     return render(request, 'home.html', context)
+
+
 
 
 def create_view(request):

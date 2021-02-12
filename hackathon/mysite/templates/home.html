@@ -1,6 +1,17 @@
 <h1>header</h1>
-<p>
-  Welcome to your user page {{profile.user.username}}
+<p> Welcome to your user page {{profile.user.username}}</p>
+
+<p> Here are your pins: 
+  {%for Pin in pins%}
+    <p>{{Pin}}</p>
+  {%endfor%}
 </p>
 
 <a href="">Edit Profile</a>
+<br><br><br>
+<h3>Submit a Resource</h3>
+<form action="" method="POST" enctype="multipart/form-data">
+  {%csrf_token%}
+  {{Rform.as_p}}
+  <button type="submit">Submit</button>
+</form>
