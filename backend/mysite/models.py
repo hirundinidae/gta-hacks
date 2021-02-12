@@ -23,4 +23,5 @@ class Profile(models.Model):
         ('NS', 'Nova Scotia'),
         ('NB', 'New Brunswick'),
     ]
+    prov_choices.sort()
     province = models.CharField(max_length=50, choices=prov_choices)
