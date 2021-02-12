@@ -1,0 +1,18 @@
+<h1>Create Profile</h1>
+
+<form method="POST">
+  {%csrf_token%}
+  {{Uform.as_p}}
+  {{Pform.as_p}}
+  <!-- {{Pform.school.label}}
+  {{Pform.school}}
+  {{Pform.bio.label}}
+  {{Pform.bio}}
+  {{Pform.province.label}}
+  {{Pform.province}} -->
+  <button type="submit">Create Profile</button>
+
+  {{ form.errors }}
+  {{ form.non_field_errors }}
+
+</form>
