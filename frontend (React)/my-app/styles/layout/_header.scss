@@ -1,0 +1,14 @@
+header {
+  @apply 
+    bg-white
+    w-screen
+    p-3
+  ;
+
+  h1 {
+    @apply 
+      text-2xl
+      font-bold
+    ;
+  }
+}
