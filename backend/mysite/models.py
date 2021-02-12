@@ -25,3 +25,9 @@ class Profile(models.Model):
     ]
     prov_choices.sort()
     province = models.CharField(max_length=50, choices=prov_choices)
+
+
+
+class Pin(models.Model):
+    prof = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    file = models.ForeignKey(Resource, on_delete=models.CASCADE)
