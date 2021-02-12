@@ -6,8 +6,8 @@ import Footer from './footer'
 
 export default function Layout({ children }) {
   return (
-    <div>
-      <Header title={ siteTitle } />
+    <div className="layout">
+      <Header />
       <main>
         { children }
       </main>

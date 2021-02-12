@@ -25,6 +25,3 @@ class Profile(models.Model):
     ]
     prov_choices.sort()
     province = models.CharField(max_length=50, choices=prov_choices)
-
-    def __str__ (self):
-        return self.title
