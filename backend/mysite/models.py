@@ -7,6 +7,11 @@ from django.contrib.auth.models import User
 class submissions(models.Model):
     summary=models.CharField(max_length=2000)
 
+class Resource(models.Model):
+    name = models.CharField(max_length=50)
+    questions = models.FileField()
+    answers = models.FileField()
+
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.CharField(max_length=200)
@@ -25,8 +30,6 @@ class Profile(models.Model):
     ]
     prov_choices.sort()
     province = models.CharField(max_length=50, choices=prov_choices)
-
-
 
 class Pin(models.Model):
     prof = models.ForeignKey(Profile, on_delete=models.CASCADE)
