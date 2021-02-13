@@ -1,14 +1,12 @@
 button {
   @apply
-    text-xl
+    text-base
     text-blue-600
     font-bold
     border-blue-600
-    border-4
-    rounded
-    py-3
-    px-7
-    m-2
+    border-2
+    py-2
+    px-4
     rounded-lg
     transition-colors
   ;
@@ -18,5 +16,15 @@ button {
       text-white
       bg-blue-600
     ;
+  }
+}
+
+@screen md {
+  button {
+    @apply
+      text-xl
+      border-4
+      py-3 px-6
+    ; 
   }
 }

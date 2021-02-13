@@ -1,33 +1,66 @@
 section {
+  
+}
+
+section.hero {
   @apply
-    w-screen
-    h-screen
-
-    grid
-    content-center
-
-    text-center
+    w-screen h-screen
+    grid content-center
+    bg-yellow-400
   ;
 
   .wrapper {
     @apply
-      w-11/12
+      w-10/12 h-screen
       mx-auto
+      bg-green-400
+      grid content-center
     ;
 
     .content {
+      @apply
+        bg-blue-300
+        flex flex-col content-center
+      ;
+
       h1 {
         @apply
-          font-bold
-          text-4xl
+          text-4xl text-center font-bold
         ;
       }
 
-      p {
+      .svg { 
         @apply
-          text-gray-700
-          text-lg  
+          bg-purple-500
+          absolute
+          w-10/12
+          bottom-8
         ;
+      
+        svg {
+          @apply
+            h-12
+            animate-bounce
+            mx-auto
+            text-center
+          ;
+        }
+      }
+    }
+  }
+}
+
+@screen sm {
+  section {
+
+  }
+
+  section.hero {
+    .wrapper {
+      .content {
+        h1 {
+          @apply text-6xl;
+        }
       }
     }
   }
