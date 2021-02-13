@@ -11,7 +11,7 @@ class ProfileSerializer(serializers.ModelSerializer):
 class ResourceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Resource
-        fields = ("name", "questions", "answers")
+        fields = ("name", "questions", "answers", "tag_list")
 
 
 class UserSerializer(serializers.ModelSerializer):

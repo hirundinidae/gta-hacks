@@ -4,6 +4,8 @@ from .serializers import ProfileSerializer, ResourceSerializer, UserSerializer
 from rest_framework import viewsets
 from django.http import JsonResponse
 from rest_framework import generics
+from rest_framework import generics
+# from rest_framework import generics
 # from django.views.generic import TemplateView
 
 # Create your views here.
