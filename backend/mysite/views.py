@@ -2,8 +2,13 @@ from django.shortcuts import render
 from .models import Profile, Resource
 from .serializers import ProfileSerializer, ResourceSerializer, UserSerializer
 from rest_framework import viewsets
+<<<<<<< Updated upstream
 from django.http import JsonResponse
 from rest_framework import generics
+=======
+from rest_framework import generics
+# from rest_framework import generics
+>>>>>>> Stashed changes
 # from django.views.generic import TemplateView
 
 # Create your views here.
