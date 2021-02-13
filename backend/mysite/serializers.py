@@ -1,7 +1,12 @@
 from rest_framework import serializers
-from .models import Profile
+from .models import Profile, Resource
 
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
         fields = ("user", "bio", "school", "province")
+
+class ResourceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Resource
+        fields = ("name", "questions", "answers")

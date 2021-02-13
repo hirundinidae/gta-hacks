@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import Profile
-from .serializers import ProfileSerializer
+from .models import Profile, Resource
+from .serializers import ProfileSerializer, ResourceSerializer
 from rest_framework import viewsets
 # from rest_framework import generics
 # from django.views.generic import TemplateView
@@ -10,3 +10,7 @@ from rest_framework import viewsets
 class ProfileView(viewsets.ModelViewSet):
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
+
+class ResourceView(viewsets.ModelViewSet):
+    queryset = Resource.objects.all()
+    serializer_class = ResourceSerializer
