@@ -1,26 +1,63 @@
 section {
-  
+  @apply
+    w-screen h-auto
+    grid content-center
+    bg-red-300
+    py-4
+  ;
+
+  .wrapper {
+    @apply
+      w-10/12 h-full
+      mx-auto
+      grid content-center
+      bg-blue-300
+    ;
+
+    .content {
+      @apply 
+        bg-green-300  
+      ;
+
+      h1 {
+        @apply
+          font-bold text-4xl
+          tracking-tight
+          text-center
+          m-2
+          leading-snug
+        ;
+      }
+
+      p {
+        @apply 
+          text-gray-700
+          text-center
+          leading-tight
+        ;
+      }
+    }
+  }
 }
 
 section.hero {
   @apply
     w-screen h-screen
     grid content-center
-    bg-yellow-400
+    bg-blue-600
   ;
 
   .wrapper {
     @apply
-      w-10/12 h-screen
+      w-10/12 h-full
       mx-auto
-      bg-green-400
       grid content-center
     ;
 
     .content {
       @apply
-        bg-blue-300
         flex flex-col content-center
+        text-white
       ;
 
       h1 {
@@ -31,7 +68,6 @@ section.hero {
 
       .svg { 
         @apply
-          bg-purple-500
           absolute
           w-10/12
           bottom-8
@@ -59,7 +95,15 @@ section.hero {
     .wrapper {
       .content {
         h1 {
-          @apply text-6xl;
+          @apply text-8xl;
+        }
+
+        .svg {
+          @apply bottom-16;
+
+          svg {
+            @apply h-16;
+          }
         }
       }
     }
