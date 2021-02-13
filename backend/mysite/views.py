@@ -11,6 +11,6 @@ class ProfileView(viewsets.ModelViewSet):
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
 
-class ResourceListView(viewsets.ModelViewSet):
+class ResourceView(viewsets.ModelViewSet):
     queryset = Resource.objects.all()
     serializer_class = ResourceSerializer

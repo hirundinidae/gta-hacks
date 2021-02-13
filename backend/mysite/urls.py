@@ -4,7 +4,7 @@ from . import views
 
 router = routers.SimpleRouter()
 router.register(r'profiles', views.ProfileView, 'profiles')
-router.register(r'resources', views.ResourceListView, 'resources')
+router.register(r'resources', views.ResourceView, 'resources')
 
 urlpatterns = [
 #     path('api/', views.ProfileListCreate.as_view()),
