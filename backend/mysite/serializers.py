@@ -2,6 +2,9 @@ from rest_framework import serializers
 from .models import Profile, Resource, tag
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
+
+from django.contrib.auth import get_user_model
 
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
