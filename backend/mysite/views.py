@@ -1,10 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Profile, Resource
 from .serializers import ProfileSerializer, ResourceSerializer, UserSerializer
 from rest_framework import viewsets
 from django.http import JsonResponse
 from rest_framework import generics
-from rest_framework import generics
+from rest_framework import filters
 # from rest_framework import generics
 # from django.views.generic import TemplateView
 
@@ -22,10 +22,27 @@ class ProfileView(viewsets.ModelViewSet):
 
 
 class ResourceView(viewsets.ModelViewSet):
+    search_fields = ['name', 'tag_list__name']
+    filter_backends = (filters.SearchFilter,)
     queryset = Resource.objects.all()
     serializer_class = ResourceSerializer
 
 class UserCreate(generics.CreateAPIView):
     queryset = User.objects.all()
+    viewset = viewsets.ModelViewSet
     serializer_class = UserSerializer
     # permission_classes = (AllowAny, )
+
+    def create(self, request, *args, **kwargs):
+        response = super(UserCreate, self).create(request, *args, **kwargs)
+        # here may be placed additional operations for
+        # extracting id of the object and using reverse()
+        return redirect('create')
+
+    # permission_classes = (AllowAny, )
+
+
+class ProfileCreate(generics.CreateAPIView):
+    viewset = viewsets.ModelViewSet
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
