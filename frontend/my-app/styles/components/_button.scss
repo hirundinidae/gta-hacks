@@ -1,0 +1,22 @@
+button {
+  @apply
+    text-xl
+    text-blue-600
+    font-bold
+    border-blue-600
+    border-4
+    rounded
+    py-3
+    px-7
+    m-2
+    rounded-lg
+    transition-colors
+  ;
+
+  &:hover {
+    @apply
+      text-white
+      bg-blue-600
+    ;
+  }
+}
