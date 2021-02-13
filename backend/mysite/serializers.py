@@ -11,8 +11,7 @@ class ProfileSerializer(serializers.ModelSerializer):
 class ResourceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Resource
-<<<<<<< Updated upstream
-        fields = ("name", "questions", "answers")
+        fields = ("name", "questions", "answers", "tag_list")
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -27,6 +26,3 @@ class UserSerializer(serializers.ModelSerializer):
         user.set_password(password)
         user.save()
         return user
-=======
-        fields = ("name", "questions", "answers", "tag_list")
->>>>>>> Stashed changes
