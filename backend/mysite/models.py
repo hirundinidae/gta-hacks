@@ -14,7 +14,7 @@ class Resource(models.Model):
         return f'{self.id}'
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    bio = models.CharField(max_length=200)
+    bio = models.CharField(max_length=200, blank=True)
     school = models.CharField(max_length=50)
     prov_choices = [
         ('QC', 'Quebec'),

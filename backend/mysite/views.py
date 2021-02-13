@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from .models import Profile, Resource
-from .serializers import ProfileSerializer, ResourceSerializer
+from .serializers import ProfileSerializer, ResourceSerializer, UserSerializer
 from rest_framework import viewsets
-# from rest_framework import generics
+from rest_framework import generics
 # from django.views.generic import TemplateView
 
 # Create your views here.
@@ -18,3 +18,8 @@ class ProfileView(viewsets.ModelViewSet):
 class ResourceView(viewsets.ModelViewSet):
     queryset = Resource.objects.all()
     serializer_class = ResourceSerializer
+
+class UserCreate(generics.CreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    # permission_classes = (AllowAny, )

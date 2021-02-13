@@ -8,5 +8,6 @@ router.register(r'resources/?', views.ResourceView, 'resources')
 
 urlpatterns = [
 #     path('api/', views.ProfileListCreate.as_view()),
-    path('api/', include(router.urls))
+    path('api/', include(router.urls)),
+    path('account/register', views.UserCreate.as_view())
 ]
