@@ -1,3 +1,9 @@
-section.home {
-  
+div.team-card-container {
+  @apply flex flex-col justify-center;
+}
+
+@screen sm {
+  div.team-card-container {
+    @apply flex-row flex-wrap
+  }
 }

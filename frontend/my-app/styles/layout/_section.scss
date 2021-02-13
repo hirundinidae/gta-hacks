@@ -2,8 +2,7 @@ section {
   @apply
     w-screen h-auto
     grid content-center
-    bg-red-300
-    py-4
+    py-12
   ;
 
   .wrapper {
@@ -11,21 +10,18 @@ section {
       w-10/12 h-full
       mx-auto
       grid content-center
-      bg-blue-300
     ;
 
     .content {
-      @apply 
-        bg-green-300  
-      ;
+      @apply text-center;
 
       h1 {
         @apply
           font-bold text-4xl
           tracking-tight
           text-center
-          m-2
-          leading-snug
+          m-4
+          leading-none
         ;
       }
 
@@ -35,6 +31,10 @@ section {
           text-center
           leading-tight
         ;
+      }
+
+      button {
+        @apply m-6;
       }
     }
   }

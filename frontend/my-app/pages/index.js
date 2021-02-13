@@ -2,7 +2,7 @@ import Head from 'next/head'
 
 import Layout from '../components/layout'
 import { siteTitle } from '../components/header'
-import IndexSearchForm from '../components/indexForm'
+import TeamCard from '../components/teamCard'
 
 export default function Home() {
   return (
@@ -29,9 +29,22 @@ export default function Home() {
         <div className="wrapper">
           <div className="content">
             <h1>Education reinvented.</h1>
-            <p>{ siteTitle } is a database of course materials made for students and teachers alike. Try searching below for some resources!</p>
+            <p>{ siteTitle } is a database of course materials made for students and teachers alike.</p>
+            <button>Get Started</button>
           </div>
-          <IndexSearchForm />
+        </div>
+      </section>
+      <section>
+        <div className="wrapper">
+          <div className="content">
+            <h1>Meet our Team</h1>
+            <div className="team-card-container">
+              <TeamCard name="Diana" title="Backend Engineer" colour="bg-blue-600" />
+              <TeamCard name="Prasun" title="Frontend Developer" colour="bg-red-600" />
+              <TeamCard name="Stephen" title="Backend Engineer" colour="bg-yellow-400" />
+              <TeamCard name="Neyha" title="UI Designer" colour="bg-green-600" />
+            </div>
+          </div>
         </div>
       </section>
     </Layout>
