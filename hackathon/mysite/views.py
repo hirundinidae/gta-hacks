@@ -22,6 +22,7 @@ def profile_view(request):
         Rform = submitResource(request.POST, request.FILES, )
         if Rform.is_valid():
             print("VALIDDD")
+            Rform.clean()
             Rform.save()
         
     context = {
