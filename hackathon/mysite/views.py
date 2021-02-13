@@ -4,7 +4,8 @@ from django.views.generic import TemplateView
 from django.contrib.auth.decorators import login_required
 from .forms import createProfile, createUser, submitResource
 from django.contrib.auth.models import User
-
+from haystack.generic_views import SearchView, SearchQuerySet
+from haystack.forms import ModelSearchForm
 # Create your views here.
 class HomePageView(TemplateView):
     template_name = 'home.html'
@@ -56,4 +57,7 @@ def create_view(request):
             return redirect('/login')
 
     return render(request, 'create.html', context)
+class Searcher(SearchView):
+    queryset=SearchQuerySet().order_by('score')
+    form_class=ModelSearchForm
 

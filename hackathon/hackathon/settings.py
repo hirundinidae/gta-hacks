@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mysite',
+    'haystack',
 ]
 
 MIDDLEWARE = [
@@ -122,3 +123,11 @@ STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '/'
 
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
+        'URL': 'http://127.0.0.1:8983/solr/HackathonProject',
+        'ADMIN_URL': 'http://127.0.0.1:8983/solr/admin/cores'
+    },
+}
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'

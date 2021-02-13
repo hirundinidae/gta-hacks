@@ -15,8 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
-
+from mysite.views import Searcher
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
@@ -24,4 +23,5 @@ urlpatterns = [
 urlpatterns += [
     path('', include ('mysite.urls')),
     path('', include("django.contrib.auth.urls")),
+    path(r'search/', Searcher.as_view(), name='search')
 ]

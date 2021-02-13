@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import HomePageView, profile_view, create_view
+from .views import HomePageView, profile_view, create_view, Searcher
 
 app_name = 'mysite'
 urlpatterns = [

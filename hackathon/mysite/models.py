@@ -1,14 +1,17 @@
 from django.db import models
 from django.contrib.auth.models import User
 class tag(models.Model):
-    name=models.CharField(max_length=200)
+    name=models.CharField(max_length=300)
+    def __str__(self):
+        return self.name
 class Resource(models.Model):
     name = models.CharField(max_length=50)
     questions = models.FileField()
     answers = models.FileField(blank=True)
     tag_list=models.ManyToManyField('tag')
     description=models.CharField(max_length=2000, blank=True)
-
+    def __str__(self):
+        return f"{self.name},{self.id}"
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.CharField(max_length=200, blank=True)
@@ -26,7 +29,10 @@ class Profile(models.Model):
         ('NB', 'New Brunswick'),
     ]
     province = models.CharField(max_length=50, choices=prov_choices)
-
+    def __str__(self):
+        return self.user.username
 class Pin(models.Model):
     prof = models.ForeignKey('Profile', on_delete=models.CASCADE)
     file = models.ForeignKey('Resource', on_delete=models.CASCADE)
+    def __str__(self):
+        return self.prof
