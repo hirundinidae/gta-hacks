@@ -34,3 +34,4 @@ class Profile(models.Model):
 class Pin(models.Model):
     prof = models.ForeignKey(Profile, on_delete=models.CASCADE)
     file = models.ForeignKey(Resource, on_delete=models.CASCADE)
+
