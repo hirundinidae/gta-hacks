@@ -11,12 +11,13 @@ class ProfileSerializer(serializers.ModelSerializer):
 class TagSerializer(serializers.ModelSerializer):
     class Meta:
         model = tag
+        fields = ("__all__")
 
 class ResourceSerializer(serializers.ModelSerializer):
-    tag = TagSerializer(read_only=True, many=True)
+    tag_list = TagSerializer(read_only=True, many=True)
     class Meta:
         model = Resource
-        fields = ("name", "questions", "answers", "tag")
+        fields = ("name", "questions", "answers", "tag_list")
 
 
 
