@@ -1,26 +1,45 @@
 header {
   @apply 
-    bg-blue-700
     w-screen
     fixed
-    py-5
+    py-2
+    shadow-md
+    bg-white
   ;
 
   .wrapper {
     @apply
-      w-11/12
+      w-10/12
       mx-auto
 
       flex
       flex-row
-      justify-around
+      justify-between
     ;
 
     h1 {
-      @apply 
-        text-3xl
+      @apply
+        text-2xl
         font-bold
+        leading-none
+        my-auto
       ;
+    }
+  }
+}
+
+@screen md {
+  header {
+    @apply
+      py-2
+    ;
+
+    .wrapper {
+      h1 {
+        @apply
+          text-4xl
+        ;
+      }
     }
   }
 }

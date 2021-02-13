@@ -4,7 +4,7 @@ from .models import Profile, Resource
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
-        fields = ("user", "bio", "school", "province")
+        fields = ("id", "user", "bio", "school", "province")
 
 class ResourceSerializer(serializers.ModelSerializer):
     class Meta:
