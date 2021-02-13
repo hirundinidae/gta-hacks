@@ -116,3 +116,5 @@ migrations/
 
 # Pycharm 
 .idea/ 
+
+*.pdf

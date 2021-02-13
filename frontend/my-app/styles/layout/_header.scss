@@ -3,7 +3,7 @@ header {
     w-screen
     fixed
     py-2
-    shadow-md
+    shadow-lg
     bg-white
   ;
 
@@ -20,6 +20,7 @@ header {
     h1 {
       @apply
         text-2xl
+        text-blue-800
         font-bold
         leading-none
         my-auto
