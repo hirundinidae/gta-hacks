@@ -4,7 +4,7 @@ from .serializers import ProfileSerializer, ResourceSerializer, UserSerializer
 from rest_framework import viewsets
 from django.http import JsonResponse
 from rest_framework import generics
-from rest_framework import generics
+from rest_framework import filters
 # from rest_framework import generics
 # from django.views.generic import TemplateView
 
@@ -22,6 +22,8 @@ class ProfileView(viewsets.ModelViewSet):
 
 
 class ResourceView(viewsets.ModelViewSet):
+    search_fields = ['name', 'tag_list__name']
+    filter_backends = (filters.SearchFilter,)
     queryset = Resource.objects.all()
     serializer_class = ResourceSerializer
 
