@@ -4,9 +4,6 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-class submissions(models.Model):
-    summary=models.CharField(max_length=2000)
-
 class Resource(models.Model):
     name = models.CharField(max_length=50)
     questions = models.FileField()
@@ -34,3 +31,6 @@ class Profile(models.Model):
 class Pin(models.Model):
     prof = models.ForeignKey(Profile, on_delete=models.CASCADE)
     file = models.ForeignKey(Resource, on_delete=models.CASCADE)
+
+class tag(models.Model):
+    name=models.CharField(max_length=200)
