@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Profile, Resource
+from .models import Profile, Resource, tag
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
@@ -8,10 +8,16 @@ class ProfileSerializer(serializers.ModelSerializer):
         model = Profile
         fields = ("id", "user", "bio", "school", "province")
 
+class TagSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = tag
+
 class ResourceSerializer(serializers.ModelSerializer):
+    tag = TagSerializer(read_only=True, many=True)
     class Meta:
         model = Resource
-        fields = ("name", "questions", "answers", "tag_list")
+        fields = ("name", "questions", "answers", "tag")
+
 
 
 class UserSerializer(serializers.ModelSerializer):
