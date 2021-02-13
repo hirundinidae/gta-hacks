@@ -10,7 +10,8 @@ class Resource(models.Model):
     answers = models.FileField()
     tag_list=models.ManyToManyField('tag')
 
-
+    def get_absolute_url(self):
+        return f'{self.id}'
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.CharField(max_length=200)
@@ -29,7 +30,8 @@ class Profile(models.Model):
     ]
     prov_choices.sort()
     province = models.CharField(max_length=50, choices=prov_choices)
-
+    def get_absolute_url(self):
+        return f'{self.id}'
 class Pin(models.Model):
     prof = models.ForeignKey(Profile, on_delete=models.CASCADE)
     file = models.ForeignKey(Resource, on_delete=models.CASCADE)
