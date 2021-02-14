@@ -50,20 +50,25 @@ export default function Search() {
           </div>
         </div>
       </section>
-      <section>
+      <section className="p-0">
         <div className="wrapper">
           <div className="content">
-            {
-              results &&
-              results.map(result => {
-                return (
-                  <ResultCard 
-                    key={ result.id }
-                    name={ result.name }
-                  />
-                )
-              })
-            }
+            <div className="result-card-container flex flex-row justify-center flex-wrap">
+              {console.log(results)}
+              {
+                results && results.map(result => {
+                  return (
+                    <ResultCard 
+                      key={ result.id }
+                      name={ result.name }
+                      questions={ result.questions }
+                      answers={ result.answers }
+                      tags={ result.tag_list }
+                    />
+                  )
+                })
+              }
+            </div>
           </div>
         </div>
       </section>
