@@ -8,8 +8,8 @@ class tag(models.Model):
         return self.name
 class Resource(models.Model):
     name = models.CharField(max_length=50)
-    questions = models.FileField()
-    answers = models.FileField()
+    questions = models.CharField(max_length=300)
+    answers = models.CharField(max_length=300, blank=True)
     tag_list=models.ManyToManyField('tag')
 
     def get_absolute_url(self):
