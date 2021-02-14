@@ -8,7 +8,7 @@ class ResourceAdmin(admin.ModelAdmin):
 class tagAdmin(admin.ModelAdmin):
     pass
 class MyUserAdmin(admin.ModelAdmin):
-    list_display = ('username', 'bio', 'school', 'province')
+    list_display = ('username', 'email', 'bio', 'school', 'province')
 # Register your models here.
 admin.site.register (Profile, ProfileAdmin)
 admin.site.register(tag, tagAdmin)
