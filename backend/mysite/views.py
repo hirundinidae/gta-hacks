@@ -37,8 +37,6 @@ class UserCreate(generics.CreateAPIView):
 
     def create(self, request, *args, **kwargs):
         response = super(UserCreate, self).create(request, *args, **kwargs,)
-        # here may be placed additional operations for
-        # extracting id of the object and using reverse()
         return redirect('create')
 
     # permission_classes = (AllowAny, )

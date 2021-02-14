@@ -35,5 +35,5 @@ class Profile(models.Model):
     def get_absolute_url(self):
         return f'{self.id}'
 class Pin(models.Model):
-    prof = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    prof = models.ForeignKey(User, on_delete=models.CASCADE)
     file = models.ForeignKey(Resource, on_delete=models.CASCADE)

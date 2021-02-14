@@ -11,7 +11,7 @@ router.register(r'pin/?', views.PinView, 'pin')
 urlpatterns = [
 #     path('api/', views.ProfileListCreate.as_view()),
     path('api/', include(router.urls)),
-    path('account/register', views.UserCreate.as_view(), ),
-    path('profile/register', views.ProfileCreate.as_view(), name='create'),
+    path('account/register', views.UserCreate.as_view(), name='create'),
+    # path('profile/register', views.ProfileCreate.as_view(), name='create'),
     path('', include("django.contrib.auth.urls")),
 ]
