@@ -7,6 +7,7 @@ router = routers.SimpleRouter(trailing_slash=False)
 router.register(r'profiles/?', views.ProfileView, 'profiles')
 router.register(r'resources/?', views.ResourceView, 'resources')
 router.register(r'pin/?', views.PinView, 'pin')
+router.register(r'users/?', views.MyUserView, 'users')
 
 urlpatterns = [
 #     path('api/', views.ProfileListCreate.as_view()),
