@@ -1,7 +1,6 @@
 import { useFormik } from 'formik'
 
-export default function SearchForm() {
-  const formik = useFormik({
+export default function SearchForm() {const formik = useFormik({
     initialValues: {
       text: '',
     },
