@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, AbstractBaseUser
 
 # Create your models here.
 class tag(models.Model):
@@ -37,3 +37,23 @@ class Profile(models.Model):
 class Pin(models.Model):
     prof = models.ForeignKey(User, on_delete=models.CASCADE)
     file = models.ForeignKey(Resource, on_delete=models.CASCADE)
+
+class MyUser(AbstractBaseUser):
+    username = models.CharField(max_length=20)
+    bio = models.CharField(max_length=200, blank=True)
+    school = models.CharField(max_length=50)
+    prov_choices = [
+        ('QC', 'Quebec'),
+        ('BC', 'British Columbia'),
+        ('ON', 'Ontario'),
+        ('AL', 'Alberta'),
+        ('MB', 'Manitoba'),
+        ('SK', 'Saskatchewan'),
+        ('NL', 'Newfoundland and Labrador'),
+        ('PE', 'Prince Edward Island'),
+        ('NS', 'Nova Scotia'),
+        ('NB', 'New Brunswick'),
+    ]
+    prov_choices.sort()
+    province = models.CharField(max_length=50, choices=prov_choices)
+    USERNAME_FIELD = 'username'

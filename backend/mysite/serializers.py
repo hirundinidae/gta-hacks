@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Profile, Resource, tag, Pin
+from .models import Profile, Resource, tag, Pin, MyUser
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
@@ -101,3 +101,8 @@ class RegisterSerializer(serializers.ModelSerializer):
         user.save()
 
         return user
+
+class MyUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MyUser
+        fields = ('username', 'email', 'bio')
