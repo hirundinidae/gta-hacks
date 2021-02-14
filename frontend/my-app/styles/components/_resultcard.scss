@@ -1,0 +1,11 @@
+@screen 2xl {
+  div.result-card {
+    h1 {
+      @apply text-left text-4xl m-0 #{!important};
+    }
+
+    p {
+      @apply text-left text-lg m-0 #{!important};
+    }
+  }
+}
