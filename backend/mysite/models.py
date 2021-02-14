@@ -1,7 +1,25 @@
 from django.db import models
-from django.contrib.auth.models import User
-
-# Create your models here.
+from django.contrib.auth.models import User, AbstractBaseUser
+class user_with_profile(AbstractBaseUser):
+    username=models.CharField(max_length=200)
+    email=models.EmailField(max_length=200)
+    bio = models.CharField(max_length=200, blank=True)
+    school = models.CharField(max_length=50)
+    prov_choices = [
+        ('QC', 'Quebec'),
+        ('BC', 'British Columbia'),
+        ('ON', 'Ontario'),
+        ('AL', 'Alberta'),
+        ('MB', 'Manitoba'),
+        ('SK', 'Saskatchewan'),
+        ('NL', 'Newfoundland and Labrador'),
+        ('PE', 'Prince Edward Island'),
+        ('NS', 'Nova Scotia'),
+        ('NB', 'New Brunswick'),
+    ]
+    prov_choices.sort()
+    province = models.CharField(max_length=50, choices=prov_choices)
+    USERNAME_FIELD=username
 class tag(models.Model):
     name=models.CharField(max_length=200)
     def __str__ (self):
