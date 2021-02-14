@@ -1,7 +1,8 @@
 export default function ResultCard({ name }) {
   return (
-    <div className="lg:w-72 lg:h-auto lg:p-8 lg:rounded-2xl lg:shadow-xl">
-      <h1 className="lg:text-left lg:text-lg">{ name }</h1>
+    <div className="result-card w-3/4 h-auto mx-auto p-8 rounded-xl shadow-xl">
+      <h1 className="text-sm">{ name }</h1>
+      <p>test</p>
     </div>
   )
 }
