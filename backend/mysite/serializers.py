@@ -39,7 +39,7 @@ class ResourceSerializer(serializers.ModelSerializer):
     tag_list = TagSerializer(read_only=True, many=True)
     class Meta:
         model = Resource
-        fields = ("name", "questions", "answers", "tag_list")
+        fields = ("id", "name", "questions", "answers", "tag_list")
 
 class PinSerializer(serializers.ModelSerializer):
     class Meta:
@@ -93,7 +93,7 @@ class RegisterSerializer(serializers.ModelSerializer):
             province=validated_data['province']
         )
 
-        
+
         user.set_password(validated_data['password'])
         user.save()
 
