@@ -29,7 +29,7 @@ export default function Home() {
         <div className="wrapper">
           <div className="content">
             <h1>Education reinvented.</h1>
-            <p>{ siteTitle } is a database of course materials made for students and teachers alike.</p>
+            <p>When the pandemic hit and sent us all to virtual school in spring 2020, none of us predicted the impact it would have on us. Many of us experienced a sudden decrease in synchronous learning and were required to rapidly adapt to online learning. One of the issues we identified was the reduction of resources available to practice concepts we learned. Textbooks were unavailable online, many teachers weren’t able to provide their usual practice worksheets, and these were leading to a drop in grades! Even when online materials were available, they were often inconsistent, unreliable, or incomplete. <br /><br />Our solution is a centralized database of practice materials provided by students or educators, accessible by grade, subject, and topic. </p>
             <button>Get Started</button>
           </div>
         </div>
