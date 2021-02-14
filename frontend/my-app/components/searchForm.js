@@ -1,6 +1,6 @@
 import { useFormik } from 'formik'
 
-export default function IndexSearchForm() {
+export default function SearchForm() {
   const formik = useFormik({
     initialValues: {
       text: '',
@@ -24,11 +24,11 @@ export default function IndexSearchForm() {
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      <label htmlFor="text">Resource</label>
         <input
           id="text"
           name="text"
           type="text"
+          placeholder="Resource name..."
           onChange={formik.handleChange}
           value={formik.values.text}
         />
