@@ -34,7 +34,7 @@ export default function Search() {
         <div className="wrapper">
           <div className="content">
             <h1>Search</h1>
-            <p>Type the resource you're looking for.</p>
+            <p>Type the resource, topic, or grade you're looking for.</p>
             <form onSubmit={formik.handleSubmit}>
               <input
                 id="text"
@@ -44,7 +44,7 @@ export default function Search() {
                 onChange={formik.handleChange}
                 value={formik.values.text}
               />
-      
+
               <button type="submit">Go</button>
             </form>
           </div>
@@ -58,7 +58,7 @@ export default function Search() {
               {
                 results && results.map(result => {
                   return (
-                    <ResultCard 
+                    <ResultCard
                       key={ result.id }
                       name={ result.name }
                       questions={ result.questions }
