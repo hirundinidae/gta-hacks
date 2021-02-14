@@ -28,3 +28,9 @@ button {
     ; 
   }
 }
+
+@screen xl {
+  button {
+    @apply text-2xl;
+  }
+}

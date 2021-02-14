@@ -116,7 +116,7 @@ section.hero {
   }
 }
 
-@screen md {
+@screen lg {
   section {
     .wrapper {
       .content {
@@ -138,7 +138,7 @@ section.hero {
     .wrapper {
       .content {
         h1 {
-          @apply text-7xl;
+          @apply text-9xl;
         }
       }
     }

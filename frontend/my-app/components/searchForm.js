@@ -17,8 +17,6 @@ export default function SearchForm() {
         .then(res => res.json())
         .then(data => console.log(data))
         .catch(error => alert(error))
-
-      alert(JSON.stringify(values, null, 2))
     },
   })
 

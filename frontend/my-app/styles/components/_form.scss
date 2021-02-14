@@ -1,0 +1,12 @@
+@screen xl {
+  form {
+    input {
+      @apply
+        p-4
+        w-96
+        rounded-lg
+        border-4
+      ;
+    }
+  }
+}
