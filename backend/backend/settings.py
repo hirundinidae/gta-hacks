@@ -42,7 +42,15 @@ INSTALLED_APPS = [
     'mysite',
     'rest_framework',
     'corsheaders',
+
+    'rest_framework.authtoken',
+    # 'rest_auth',
+    'allauth',
+    'allauth.account',
+    # 'rest_auth.registration',
+    'django.contrib.sites',
 ]
+SITE_ID = 1
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -112,6 +120,12 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     ]
 }
+
+AUTHENTICATION_BACKENDS = (
+"django.contrib.auth.backends.ModelBackend",
+"allauth.account.auth_backends.AuthenticationBackend"
+)
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 

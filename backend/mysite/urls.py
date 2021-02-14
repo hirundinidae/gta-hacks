@@ -13,8 +13,9 @@ urlpatterns = [
 #     path('api/', views.ProfileListCreate.as_view()),
     path('api/', include(router.urls)),
     path('api/account/register', views.UserCreate.as_view(), name='create'),
-    # path('profile/register', views.ProfileCreate.as_view(), name='create'),
+    # path('profile/register', views.ProfileCreate.as_view()),
     path('', include("django.contrib.auth.urls")),
     path('api-auth/', include('rest_framework.urls')),
+    path('log', views.Login, name='Login')
     
 ]

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Profile, Resource, Pin, MyUser
-from .serializers import ProfileSerializer, ResourceSerializer, UserSerializer, RegisterSerializer, PinSerializer, MyUserSerializer
+from .serializers import ProfileSerializer, ResourceSerializer, UserSerializer, RegisterSerializer, PinSerializer, MyUserSerializer, RegisterUserSerializer
 from rest_framework import viewsets
 from django.http import JsonResponse
 from rest_framework import generics
@@ -35,10 +35,10 @@ class PinView(viewsets.ModelViewSet):
 
 class UserCreate(generics.CreateAPIView):
     queryset = MyUser.objects.all()
-    serializer_class = RegisterSerializer
+    serializer_class = RegisterUserSerializer
     def create(self, request, *args, **kwargs):
         response = super(UserCreate, self).create(request, *args, **kwargs,)
-        return redirect('create')
+        return redirect('/api-auth/login')
 
     # permission_classes = (AllowAny, )
 
@@ -60,3 +60,27 @@ class MyUserView(viewsets.ModelViewSet):
         user = get_object_or_404(queryset, username=pk)
         serializer = MyUserSerializer(user)
         return Response(serializer.data)
+
+
+
+
+
+from django.contrib.auth.forms import AuthenticationForm
+
+def Login(request):
+    if request.method == 'POST':
+
+        #AuthenticationForm_can_also_be_used__
+
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            form = login(request,user)
+            messages.success(request, f' wecome {username} !!')
+            print('REDIRECT')
+            return redirect('/api/users/username')
+        else:
+            messages.info(request, f'account done not exit plz sign in')
+    form = AuthenticationForm()
+    return redirect('/api-auth/login')
