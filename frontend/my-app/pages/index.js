@@ -1,5 +1,3 @@
-import Head from 'next/head'
-
 import Layout from '../components/layout'
 import { siteTitle } from '../components/header'
 import TeamCard from '../components/teamCard'
@@ -7,10 +5,7 @@ import TeamCard from '../components/teamCard'
 export default function Home() {
   return (
     <Layout>
-      <Head>
-        <title>Our App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      
       <section className="hero">
         <div className="wrapper">
           <div className="content">
