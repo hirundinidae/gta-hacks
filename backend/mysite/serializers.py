@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Profile, Resource, tag
+from .models import Profile, Resource, tag, Pin
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
@@ -41,7 +41,10 @@ class ResourceSerializer(serializers.ModelSerializer):
         model = Resource
         fields = ("name", "questions", "answers", "tag_list")
 
-
+class PinSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Pin
+        fields = ("__all__")
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Profile, Resource
-from .serializers import ProfileSerializer, ResourceSerializer, UserSerializer, RegisterSerializer
+from .models import Profile, Resource, Pin
+from .serializers import ProfileSerializer, ResourceSerializer, UserSerializer, RegisterSerializer, PinSerializer
 from rest_framework import viewsets
 from django.http import JsonResponse
 from rest_framework import generics
@@ -26,6 +26,10 @@ class ResourceView(viewsets.ModelViewSet):
     filter_backends = (filters.SearchFilter,)
     queryset = Resource.objects.all()
     serializer_class = ResourceSerializer
+
+class PinView(viewsets.ModelViewSet):
+    queryset = Pin.objects.all()
+    serializer_class = PinSerializer
 
 class UserCreate(generics.CreateAPIView):
     queryset = User.objects.all()
