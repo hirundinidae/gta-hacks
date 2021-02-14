@@ -7,6 +7,17 @@ export default function IndexSearchForm() {
     },
 
     onSubmit: values => {
+      const url = `http://localhost:8000/api/resources/?search=${values.text}`
+
+      fetch(url, {
+        method: 'GET',
+        body: null,
+        headers: { 'Content-Type': 'application/json' },
+      })
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(error => alert(error))
+
       alert(JSON.stringify(values, null, 2))
     },
   })

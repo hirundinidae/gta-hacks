@@ -1,0 +1,51 @@
+figure.team-card {
+  @apply
+    w-full h-auto
+    shadow-lg
+    my-4
+    p-6
+    rounded-md
+
+    flex flex-row
+  ;
+
+  .circle {
+    @apply
+      w-12 h-12
+      rounded-full
+      mr-4
+      my-auto
+    ;
+  }
+
+  .details {
+    @apply my-auto;
+
+    h1 {
+      @apply
+        text-xl text-left
+        m-0
+      ;
+    }
+
+    p {
+      @apply text-left;
+    }
+  }
+}
+
+@screen sm {
+  figure.team-card {
+    @apply
+    max-w-sm
+    mx-4
+    ;
+
+    .circle {
+      @apply
+        w-16 h-16
+        mr-6
+      ;
+    }
+  }
+}
