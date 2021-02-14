@@ -53,4 +53,4 @@ class ProfileCreate(generics.CreateAPIView):
 
 class MyUserView(viewsets.ModelViewSet):
     queryset = MyUser.objects.all()
-    serializer_class = MyUserSerializer
+    serializer_class = MyUserSerializer 
