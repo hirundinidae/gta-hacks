@@ -5,7 +5,7 @@ import { useFormik } from 'formik'
 import axios from 'axios'
 
 export default function Search() {
-  const [results, setResults] = useState(null)
+  const [results, setResults] = useState([])
 
   const formik = useFormik({
     initialValues: {
@@ -55,7 +55,7 @@ export default function Search() {
           <div className="content">
             <div className="result-card-container flex flex-row justify-center flex-wrap items-center">
               {
-                results.length == 0 && <span className="text-xl text-gray-400 font-semibold italic">Nothing was found... Try another search?</span>
+                results.length < 1 && <span className="text-xl text-gray-400 font-semibold italic">Nothing was found... Try another search?</span>
               }
               
               {
