@@ -42,6 +42,7 @@ class MyUser(AbstractBaseUser):
     username = models.CharField(max_length=20)
     bio = models.CharField(max_length=200, blank=True)
     school = models.CharField(max_length=50)
+    email = models.EmailField(max_length=200, blank=True)
     prov_choices = [
         ('QC', 'Quebec'),
         ('BC', 'British Columbia'),

@@ -33,9 +33,8 @@ class PinView(viewsets.ModelViewSet):
     serializer_class = PinSerializer
 
 class UserCreate(generics.CreateAPIView):
-    queryset = User.objects.all()
+    queryset = MyUser.objects.all()
     serializer_class = RegisterSerializer
-
     def create(self, request, *args, **kwargs):
         response = super(UserCreate, self).create(request, *args, **kwargs,)
         return redirect('create')
@@ -53,4 +52,4 @@ class ProfileCreate(generics.CreateAPIView):
 
 class MyUserView(viewsets.ModelViewSet):
     queryset = MyUser.objects.all()
-    serializer_class = MyUserSerializer
+    serializer_class = MyUserSerializer 

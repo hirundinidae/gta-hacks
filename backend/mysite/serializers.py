@@ -66,17 +66,17 @@ from django.contrib.auth.password_validation import validate_password
 
 
 class RegisterSerializer(serializers.ModelSerializer):
-    email = serializers.EmailField(
-            required=True,
-            validators=[UniqueValidator(queryset=MyUser.objects.all())]
-            )
+    # email = serializers.EmailField(
+    #         required=True,
+    #         validators=[UniqueValidator(queryset=MyUser.objects.all())]
+    #         )
 
     password = serializers.CharField(write_only=True, required=True, validators=[validate_password])
     password2 = serializers.CharField(write_only=True, required=True)
 
     class Meta:
         model = MyUser
-        fields = ('username', 'password', 'password2', 'email', 'bio', 'school', 'province')
+        fields = ('username', 'password', 'password2', 'bio', 'school', 'province', 'email')
 
     def validate(self, attrs):
         if attrs['password'] != attrs['password2']:
@@ -102,4 +102,4 @@ class RegisterSerializer(serializers.ModelSerializer):
 class MyUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = MyUser
-        fields = ('username', 'email', 'bio', 'province', 'school')
+        fields = ('username', 'bio', 'province', 'school', 'email', 'password')
