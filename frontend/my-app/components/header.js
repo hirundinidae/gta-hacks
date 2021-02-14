@@ -1,4 +1,4 @@
-export const siteTitle = 'SiteName'
+export const siteTitle = 'Resourca'
 
 // if logged in --> show profile button, else --> show log in button
 

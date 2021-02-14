@@ -62,7 +62,7 @@ section.hero {
 
       h1 {
         @apply
-          text-4xl text-center font-bold
+          text-5xl text-center font-bold
         ;
       }
 
@@ -88,7 +88,13 @@ section.hero {
 
 @screen sm {
   section {
-
+    .wrapper {
+      .content {
+        h1 {
+          @apply text-6xl;
+        }
+      }
+    }
   }
 
   section.hero {
@@ -104,6 +110,28 @@ section.hero {
           svg {
             @apply h-16;
           }
+        }
+      }
+    }
+  }
+}
+
+@screen md {
+  section {
+    .wrapper {
+      .content {
+        h1 {
+          @apply text-7xl;
+        }
+      }
+    }
+  }
+
+  section.hero {
+    .wrapper {
+      .content {
+        h1 {
+          @apply text-7xl;
         }
       }
     }
