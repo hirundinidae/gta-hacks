@@ -4,6 +4,7 @@ from .serializers import ProfileSerializer, ResourceSerializer, UserSerializer, 
 from rest_framework import viewsets
 from django.http import JsonResponse
 from rest_framework import generics
+from django.shortcuts import get_object_or_404
 from rest_framework import filters
 # from rest_framework import generics
 # from django.views.generic import TemplateView
@@ -52,4 +53,10 @@ class ProfileCreate(generics.CreateAPIView):
 
 class MyUserView(viewsets.ModelViewSet):
     queryset = MyUser.objects.all()
-    serializer_class = MyUserSerializer 
+    serializer_class = MyUserSerializer
+
+    def retrieve(self, request, pk=None):
+        queryset = MyUser.objects.all()
+        user = get_object_or_404(queryset, username=pk)
+        serializer = MyUserSerializer(user)
+        return Response(serializer.data)
