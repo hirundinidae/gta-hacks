@@ -54,7 +54,6 @@ export default function Search() {
         <div className="wrapper">
           <div className="content">
             <div className="result-card-container flex flex-row justify-center flex-wrap items-center">
-              {console.log(results)}
               {
                 results && results.map(result => {
                   return (
