@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Profile, Resource
-from .serializers import ProfileSerializer, ResourceSerializer, UserSerializer
+from .serializers import ProfileSerializer, ResourceSerializer, UserSerializer, RegisterSerializer
 from rest_framework import viewsets
 from django.http import JsonResponse
 from rest_framework import generics
@@ -29,10 +29,10 @@ class ResourceView(viewsets.ModelViewSet):
 class UserCreate(generics.CreateAPIView):
     viewset = viewsets.ModelViewSet
     queryset = User.objects.all()
-    serializer_class = UserSerializer
+    serializer_class = RegisterSerializer
 
     def create(self, request, *args, **kwargs):
-        response = super(UserCreate, self).create(request, *args, **kwargs)
+        response = super(UserCreate, self).create(request, *args, **kwargs,)
         # here may be placed additional operations for
         # extracting id of the object and using reverse()
         return redirect('create')
@@ -44,3 +44,5 @@ class ProfileCreate(generics.CreateAPIView):
     viewset = viewsets.ModelViewSet
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
+    # def create(self, request, *args, **kwargs):
+    #     response = super(ProfileCreate, self).create(request, *args, **kwargs,)
