@@ -101,11 +101,11 @@ section.hero {
     .wrapper {
       .content {
         h1 {
-          @apply text-8xl;
+          @apply text-6xl;
         }
 
         .svg {
-          @apply bottom-16;
+          @apply bottom-12;
 
           svg {
             @apply h-16;
@@ -121,7 +121,14 @@ section.hero {
     .wrapper {
       .content {
         h1 {
-          @apply text-7xl;
+          @apply
+            text-7xl
+            m-6  
+          ;
+        }
+
+        p {
+          @apply text-lg;
         }
       }
     }
