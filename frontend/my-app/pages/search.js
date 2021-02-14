@@ -45,7 +45,7 @@ export default function Search() {
                 value={formik.values.text}
               />
       
-              <button type="submit">Submit</button>
+              <button type="submit">Go</button>
             </form>
           </div>
         </div>
@@ -53,7 +53,7 @@ export default function Search() {
       <section className="p-0">
         <div className="wrapper">
           <div className="content">
-            <div className="result-card-container flex flex-row justify-center flex-wrap">
+            <div className="result-card-container flex flex-row justify-center flex-wrap items-center">
               {console.log(results)}
               {
                 results && results.map(result => {
