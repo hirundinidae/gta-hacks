@@ -55,6 +55,10 @@ export default function Search() {
           <div className="content">
             <div className="result-card-container flex flex-row justify-center flex-wrap items-center">
               {
+                results.length == 0 && <span className="text-xl text-gray-400 font-semibold italic">Nothing was found... Try another search?</span>
+              }
+              
+              {
                 results && results.map(result => {
                   return (
                     <ResultCard
