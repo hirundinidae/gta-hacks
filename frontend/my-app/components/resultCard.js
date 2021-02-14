@@ -18,7 +18,7 @@ export default function ResultCard({ name, questions, answers, tags }) {
           tags && tags.slice(0, 3).map(tag => {
             return <span
                     key={tag.id}
-                    className="py-1 px-4 mt-4 mr-2 border-4 border-blue-600 text-blue-600 font-bold rounded-full"
+                    className="py-1 text-xs px-4 mt-4 mr-2 border-2 border-blue-600 text-blue-600 font-bold rounded-full"
                   >{ tag.name }</span>
           })
         }
